@@ -1,0 +1,81 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Gold Medal for Outstanding Medal Design</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+    var rect1 = new Rectangle(50,200);
+ rect1.setPosition(70,65);
+ rect1.setColor(Color.black);
+ add(rect1);
+rect1.setRotation(10); 
+
+var rect2 = new Rectangle(50,200);
+ rect2.setPosition(200,65);
+ rect2.setColor(Color.black);
+  add(rect2);
+rect2.setRotation(10); 
+
+var rect3 = new Rectangle(50,200);
+ rect3.setPosition(330,65);
+ rect3.setColor(Color.black);
+ add(rect3);
+ rect3.setRotation(10); 
+ 
+ var gold = new Circle(65);
+ gold.setPosition(70,300);
+ gold.setColor(Color.yellow);
+ add(gold);
+ 
+var silver = new Circle(65);
+ silver.setPosition(200,300);
+ silver.setColor("#D3D3D3");
+ add(silver);
+ 
+var bronze = new Circle(65);
+ bronze.setPosition(330,300);
+ bronze.setColor("#cd7f32");
+ add(bronze);
+ 
+
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>

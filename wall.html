@@ -1,0 +1,99 @@
+
+<html>
+<head>
+<title>Circle Wall</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Circle Wall</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    // Constants
+var RADIUS = 20;
+var DELAY = 2000;
+
+// Define your global variables here
+var x = RADIUS;
+var y = RADIUS;
+
+function start(){
+	setTimer(circleWall, DELAY);
+}
+
+function circleWall(){
+    
+     for(var r = 0; r < 12; r++)
+    {
+    
+         for(var row = 1; row <= 10; row++)
+        {
+            var circle = new Circle(RADIUS);
+            if (row % 2 != 0)
+            {
+                circle.setColor(Color.red);
+            }
+            else
+            {
+                circle.setColor(Color.black);
+            }
+            circle.setPosition(x, y);
+            add(circle);
+            x += RADIUS * 2;
+            if (row == 10)
+            {
+                x = RADIUS;
+                y += RADIUS*2;
+            }
+            
+        }           
+        
+
+    
+    }
+    
+    	
+    stopTimer(circleWall);
+    
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

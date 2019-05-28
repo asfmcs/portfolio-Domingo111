@@ -1,0 +1,267 @@
+<html>
+<head>
+<title>maze</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/27c6d22afd09fca95d7cc7b6da31ed640b776ae1/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 20px solid blue;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 0x solid blue;
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>maze</h1>
+
+
+
+<canvas
+width="2000"
+height="1000"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start() {
+    drawMaze(Color.black);
+    var pink = ("#FFC0CB")
+    drawPacman(100,100);
+    drawGhost(1000,480, Color.red);
+    drawGhost(900,480, Color.cyan);
+    drawGhost(1100,480, pink);
+    drawGhost(1575,850, Color.orange);
+   
+   
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+function drawMaze(color){
+    var neonBlue = ("#1919A6")
+    var bg = new Rectangle (2000,1000);
+    bg .setColor (color);
+    bg .setPosition(0,0);
+    add(bg);
+    
+    var l1 = new Line(500,250,500, 0);
+    l1.setColor(Color.blue)
+    l1.setLineWidth(20)
+    add(l1)
+
+    var l2 = new Line(1500,250,1500, 0);
+    l2.setColor(Color.blue)
+    l2.setLineWidth(20)
+    add(l2)
+    
+
+    var l3 = new Line(1500,750,1500, 2000);
+    l3.setColor(Color.blue)
+    l3.setLineWidth(20)
+    add(l3)
+
+    var l4 = new Line(500,750,500, 2000);
+    l4.setColor(Color.blue)
+    l4.setLineWidth(20)
+    add(l4)
+
+    var l5 = new Line(1250,750, 750,750,);
+    l5.setColor(Color.blue)
+    l5.setLineWidth(20)
+    add(l5)
+
+    var l6 = new Line(1250,250, 750,250,);
+    l6.setColor(Color.blue)
+    l6.setLineWidth(20)
+    add(l6)
+
+     var l7 = new Line(200,250,300, 250);
+    l7.setColor(Color.blue)
+    l7.setLineWidth(20)
+    add(l7)
+
+    var l8 = new Line(200,750,300, 750);
+    l8.setColor(Color.blue)
+    l8.setLineWidth(20)
+    add(l8)
+
+    var l9 = new Line(1800,250,1700, 250);
+    l9.setColor(Color.blue)
+    l9.setLineWidth(20)
+    add(l9)
+
+    var l10 = new Line(1800,750,1700, 750);
+    l10.setColor(Color.blue)
+    l10.setLineWidth(20)
+    add(l10)
+
+    var l11 = new Line(750,425,900,425);
+    l11.setColor(Color.blue)
+    l11.setLineWidth(20)
+    add(l11)
+
+    var l12 = new Line(750,575,1250,575);
+    l12.setColor(Color.blue)
+    l12.setLineWidth(20)
+    add(l12)
+
+    var l13 = new Line(1100,425,1250,425);
+    l13.setColor(Color.blue)
+    l13.setLineWidth(20)
+    add(l13)
+
+    var l14 = new Line(750,575,750,425);
+    l14.setColor(Color.blue)
+    l14.setLineWidth(20)
+    add(l14)
+
+    var l15 = new Line(1250,575,1250,425);
+    l15.setColor(Color.blue)
+    l15.setLineWidth(20)
+    add(l15)
+
+    var l16 = new Line(200,250,200,400);
+    l16.setColor(Color.blue)
+    l16.setLineWidth(20)
+    add(l16)
+
+    var l17 = new Line(200,750,200,600);
+    l17.setColor(Color.blue)
+    l17.setLineWidth(20)
+    add(l17)
+
+    var l18 = new Line(1800,750,1800,600);
+    l18.setColor(Color.blue)
+    l18.setLineWidth(20)
+    add(l18)
+
+    var l19 = new Line(1800,250,1800,400);
+    l19.setColor(Color.blue)
+    l19.setLineWidth(20)
+    add(l19)
+
+    var l20 = new Line(350,400, 650, 400);
+    l20.setColor(Color.blue)
+    l20.setLineWidth(20)
+    add(l20)
+
+     var l21 = new Line(350,600, 650, 600);
+    l21.setColor(Color.blue)
+    l21.setLineWidth(20)
+    add(l21)
+    
+     var l22 = new Line(1350,400, 1650, 400);
+    l22.setColor(Color.blue)
+    l22.setLineWidth(20)
+    add(l22)
+
+
+ var l23 = new Line(1350,600, 1650, 600);
+    l23.setColor(Color.blue)
+    l23.setLineWidth(20)
+    add(l23)
+
+
+
+}
+////////////////////////////////////////////////////////////////////////////////////////////
+function drawPacman(centerx,centery,location){
+    var w = 50;
+    var l = 50;
+    
+    var circle = new Circle(w);
+    circle.setColor(Color.yellow);
+    circle.setPosition(centerx ,centery);
+    add(circle);
+    
+   
+var myArc = new Arc(50, -20, 30, 0 );
+myArc.setPosition(centerx, centery);
+myArc.setColor(Color.black);
+add(myArc); 
+
+var circle = new Circle(w/8);
+    circle.setColor(Color.black);
+    circle.setPosition(centerx + 10 ,centery -65);
+    add(circle);    
+}
+////////////////////////////////////////////////////////////////////////////////////////////
+function drawGhost(centerx,centery,color){
+    var w = 50;
+    var l = 50;
+    var rect = new Rectangle(w,l);
+    rect.setPosition(centerx,centery);
+    rect.setColor(color);
+    add(rect);
+    
+    var circle = new Circle(w/2);
+    circle.setColor(color);
+    circle.setPosition(centerx + (w/2) ,centery);
+    add(circle);
+    
+    var eye1 = new Circle(w/8);
+    eye1.setColor(Color.white);
+    eye1.setPosition(centerx +15, centery);
+    add(eye1);
+    
+    var eeye1 = new Circle(w/10);
+    eeye1.setColor(Color.blue);
+    eeye1.setPosition(centerx +17, centery);
+    add(eeye1);
+    
+     var eye2 = new Circle(w/8);
+    eye2.setColor(Color.white);
+    eye2.setPosition(centerx +35, centery);
+    add(eye2);
+    
+     
+     var eeye2 = new Circle(w/10);
+    eeye2.setColor(Color.blue);
+    eeye2.setPosition(centerx +37, centery);
+    add(eeye2);
+    
+    
+    var feet1 = new Circle(w/6);
+    feet1.setColor(color);
+    feet1.setPosition(centerx +8, centery+50);
+    add(feet1);
+    
+    
+    var feet2 = new Circle(w/6);
+    feet2.setColor(color);
+    feet2.setPosition(centerx+25, centery+50);
+    add(feet2);
+    
+    
+    var feet3 = new Circle(w/6);
+    feet3.setColor(color);
+    feet3.setPosition(centerx +42, centery+50);
+    add(feet3);
+}
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+body{
+font-family:helvetica;
+font-size: 27px;
+background-position: center;
+background-size: cover;
+margin-right:350px;
+margin-left:350px;
+letter-spacing:5px;
+background-image:url('https://media.giphy.com/media/9mL99dUOnQPWo/giphy.gif'); additive-symbols: 
+  }
+h1{letter-spacing:3px;
+   font-family:arial;
+
+}
+
+
+#table  td, #table #vct th {
+  border: 10px solid #ddd;
+  padding: 8px;
+}
+
+#table  tr:nth-child(even){background-color: #f2f2f2;}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
